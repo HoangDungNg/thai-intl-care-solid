@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       boxShadow: {
@@ -8,4 +7,9 @@ export default {
       },
     },
   },
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.css", // include css modules if you rely on scanning, optional but safe
+  ],
 };

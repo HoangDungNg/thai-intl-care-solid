@@ -3,6 +3,10 @@ import { cx } from "@/utils/cx";
 
 interface CustomImageProps {
   class?: string;
+  classes?: {
+    root?: string;
+    img?: string;
+  };
   aspectRatio?: "square" | "video" | "portrait" | "auto";
   size?: "xs" | "md" | "lg" | "xl";
   src: string;
@@ -69,6 +73,7 @@ export const CustomImage: Component<CustomImageProps> = (props) => {
         // optional: nice defaults (feel free to remove)
         "overflow-hidden",
         props.class,
+        props.classes?.root,
       )}
     >
       <img
@@ -80,6 +85,7 @@ export const CustomImage: Component<CustomImageProps> = (props) => {
           // always cover + fill container when aspect ratio is set
           "object-cover",
           ratioClass() ? "h-full w-full" : "w-full h-auto",
+          props.classes?.img,
         )}
       />
     </div>

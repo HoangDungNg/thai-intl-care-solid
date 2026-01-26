@@ -1,7 +1,7 @@
 import { CustomImage } from "@/components/atoms/CustomImage";
 import { Paragraph } from "@/components/atoms/Paragraph";
 import { Title } from "@/components/atoms/Title";
-import { StackedImages } from "@/components/molecules/StackedImages";
+import { StackedImages } from "@/components/molecules/StackedImages/StackedImages";
 import { A } from "@solidjs/router";
 
 export default function Home() {

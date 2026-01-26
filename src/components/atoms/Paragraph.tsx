@@ -8,12 +8,21 @@ interface TextProps {
   as?: ValidComponent; // "div" | "p" | custom component, etc.
 }
 
-export const Paragraph: Component<TextProps> = (props) => {
-  const as = () => props.as ?? "div";
+export const Paragraph: Component<TextProps> = ({
+  as: asComponent,
+  class: className,
+  children,
+  ...rest
+}) => {
+  const as = () => asComponent ?? "div";
 
   return (
-    <Dynamic component={as()} class={cx("text-base font-light", props.class)}>
-      {props.children}
+    <Dynamic
+      component={as()}
+      class={cx("text-base font-light", className)}
+      {...rest}
+    >
+      {children}
     </Dynamic>
   );
 };
